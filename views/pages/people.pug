@@ -1,0 +1,39 @@
+doctype html
+
+include ../partials/head.pug
+
+// Navigation Bar
+
+include ../partials/header.pug
+
+script(src='../js/person.js')
+
+// Name, occupation(s), ratings
+.row
+  .col-4
+    h3.review 
+      label#pageName #{person.name}
+      label (#{person.jobs})
+    img(src=person.picture)
+  .col
+    if !doesFollow
+      button.btn.btn-outline-primary(type='button' onclick='toggleFollow(this)') Follow +
+    else
+      button.btn.btn-outline-danger(type='button' onclick='toggleFollow(this)') Unfollow
+br
+br
+
+// Movies person has worked on
+h5 Frequent collaborators:
+  ul
+    each collab in person.collab
+      li 
+        a(href="../../people/" + collab) #{collab}
+
+// Movies person has worked on
+h5 Movies #{person.name} has worked on:
+
+.row
+  each movie in movies
+    a(href="../../movies/" + movie.id)
+      img(class='movie' src=movie.Poster)

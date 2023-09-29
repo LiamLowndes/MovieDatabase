@@ -1,0 +1,33 @@
+doctype html
+
+include ../partials/head.pug
+
+// Navigation Bar
+
+include ../partials/header.pug
+
+script(src='../js/index.js')
+
+if !session.loggedin
+  // Log in / Sign Up Tabbed Navigation
+  .demo_wrap
+    .container
+      .row
+        .col
+          h3 Login:
+          div
+            .form-group
+              label.col-sm-2(for='username') Username:
+              .col-sm-10
+                input#loginUsername.form-control(type='username' placeholder='Enter username' name='loginUsername' value="Eddy")
+            .form-group
+              label.col-sm-2(for='password') Password:
+              .col-sm-10
+                input#loginPassword.form-control(type='password' placeholder='Enter password' name='loginPassword' value="Eddy")
+                button(onclick='login()') Login
+else
+  h2 Movies recommended for you:
+  each movie in movies
+    a(href="movies/" + movie.id)
+      img(src=movie.Poster)
+    

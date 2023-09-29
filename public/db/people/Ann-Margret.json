@@ -1,0 +1,7 @@
+{
+    "id": 11,
+    "name": "Ann-Margret",
+    "movies": [2],
+    "jobs":["Actor"],
+    "picture": "https://upload.wikimedia.org/wikipedia/en/1/18/Ann_Margret_1968.jpg"
+}

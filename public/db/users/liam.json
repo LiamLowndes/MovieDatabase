@@ -1,0 +1,20 @@
+{
+    "id": 0,
+    "username": "Liam",
+    "password": "Liam",
+    "reviews": [
+        0,
+        3,
+        6
+    ],
+    "following": [
+        1
+    ],
+    "followers": [
+        1,
+        2
+    ],
+    "bio": "Hi, I'm Liam. I love movies AND computer science :)!",
+    "contributor": true,
+    "picture": "https://thumbs.dreamstime.com/z/funny-picture-guy-pink-sunglasses-25386017.jpg"
+}

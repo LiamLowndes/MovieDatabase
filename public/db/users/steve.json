@@ -1,0 +1,17 @@
+{
+    "id": 2,
+    "username": "Steve",
+    "password": "Steve",
+    "reviews": [
+        2,
+        5,
+        8
+    ],
+    "following": [
+        0
+    ],
+    "followers": [],
+    "bio": "S T E V E",
+    "contributor": false,
+    "picture": "https://img.comicfury.com/comics/120/88f91da18672f17c9376fde746444b5c1932406471.jpeg"
+}

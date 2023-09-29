@@ -1,0 +1,7 @@
+{
+    "id": 4,
+    "name": "Robin Williams",
+    "movies": [1],
+    "jobs":["Actor"],
+    "picture": "https://api.time.com/wp-content/uploads/2014/08/robin-williams-portrait-by-brigitte-lacombe.jpg"
+}

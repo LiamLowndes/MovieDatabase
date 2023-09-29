@@ -1,0 +1,65 @@
+doctype html
+
+include ../partials/head.pug
+
+// Navigation Bar
+
+include ../partials/header.pug
+
+script(src='../js/user.js')
+
+.row
+  .col-sm-4
+    img.profile(src=user.picture)
+  .col-sm-4
+    h3.review#pageName #{user.username}
+    if user.contributor
+      label Reviews: #{user.reviews.length} | 
+        label#con Contributor
+    else
+      label Reviews: #{user.reviews.length} | 
+        label#con Normal User
+    br
+    label
+      p Following: 
+        br
+        a(href='/following/' + user.username) #{user.following.length} other users
+        br
+        a(href='/followedby/' + user.username) #{user.peopleFollowed.length} other people
+    br
+
+    if session.mypage
+      button.btn.btn-outline-primary(type='button' onclick='toggleEdit(this)') Edit
+      if user.contributor
+        button.btn.btn-outline-danger(type='button' onclick='toggleUpgrade(this)') Remove contributing user privileges
+      else
+        button.btn.btn-outline-primary(type='button' onclick='toggleUpgrade(this)') Become a contributing user
+    else
+      if doesFollow
+        button.btn.btn-outline-danger(type='button' onclick='toggleFollow(this)') Unfollow
+      else
+        button.btn.btn-outline-primary(type='button' onclick='toggleFollow(this)') Follow +
+br
+.row
+  #bio.col
+    h3 Bio
+    p#bioText #{user.bio}
+br
+br
+h5 Reviews by #{user.username}
+// Reviews
+
+each review in reviews
+
+  .row-sm-9.justify-content-center.review
+    .card
+      .card-body
+        .row
+          img.revIcon.userHover(src=user.picture)
+          .col-sm-9
+            h5.card-title #{review.summary}
+              h6.card-subtitle.mb-2.text-muted.userHover #{user.username}
+          .col
+            h5.outOfTen(align='right') #{review.score} / 10
+        .row
+          p.card-text #{review.review}

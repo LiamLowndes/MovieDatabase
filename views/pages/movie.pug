@@ -1,0 +1,124 @@
+doctype html
+
+include ../partials/head.pug
+
+// Navigation Bar
+
+include ../partials/header.pug
+
+script(src='../js/movie.js')
+
+// Poster / Title / Official Ratings
+.row
+  .col
+  .container-fluid
+    .row
+      .col
+        img#poster.movie(src=movie.Poster)
+      .col-sm-9.besideMovie
+        h2#title(style='margin-left: 0px;') #{movie.Title} (#{movie.Year}) | #{movie.Runtime}
+        if !session.noReviews
+          p#average People on The Movie Database give 
+            label#movieTitle #{movie.Title}
+            label : #{session.total} / 10
+        else
+          p#average People on The Movie Database give 
+            label#movieTitle #{movie.Title}
+            br
+            label There are no reviews on this movie yet
+
+        each genre in movie.Genre
+          a#genre(href="/movies?genre=" + genre) #{genre}  
+        label
+          label#info
+        p#plot #{movie.Plot}
+        label
+          b Directed by:
+            each d in movie.Director
+              a#director(href="/people/" + d) #{d}
+        br
+        br
+        .row
+          .col
+
+            h3 IMDb: #{movie.imdbRating}
+            img.tomato(src='../img/imdb-logo.png' style='width: 100px')
+            h3#imdb
+  .col
+// Accordian tabs to show the movies Actors / Writers / Awards
+.row
+  .col
+  .col-sm-12
+    #accordion
+      // Actors
+      .card
+        .card-header
+          button.btn.btn-link(data-toggle='collapse' data-target='#ac')
+            | Actor(s)
+        #ac.collapse.show(data-parent='#accordion')
+          #actors.card-body
+            ul
+            each actor in movie.Actors
+              a(href="/people/" + actor)
+                li #{actor}
+      // Writers
+      .card
+        .card-header
+          button.btn.btn-link.collapsed(data-toggle='collapse' data-target='#wi')
+            | Writer(s)
+        #wi.collapse(data-parent='#accordion')
+          #writers.card-body
+            ul
+            each writer in movie.Writers
+              a(href="/people/" + writer)
+                li #{writer}
+      // Awards
+      .card
+        .card-header
+          button.btn.btn-link.collapsed(data-toggle='collapse' data-target='#aw')
+            | Award(s)
+        #aw.collapse(data-parent='#accordion')
+          #awards.card-body
+            ul
+              li #{movie.Awards}
+  .col
+  // To center accordian
+.row
+  .col-sm-1
+h2.review(style='margin-left: 0px;') Reviews:
+// Reviews
+
+h3 Add a review:
+
+input#smallScore(placeholder='score (1-10)' class='smallScore')
+br
+input#theSummary(placeholder='Enter summary here' class='summary')
+textarea#theReview(placeholder='Enter full review here' class='reviewBody')
+button.btn(type='button' onclick='addReview(this)') Submit Review
+
+if reviews.length > 0
+  each review in reviews
+    .row-sm-9.justify-content-left.review
+      .card
+        .card-body
+          .row
+            a(href="/users/" + review.user)
+                img.revIcon.userHover(src=review.picture)
+            .col-sm-9
+              h5.card-title #{review.summary}
+              a(href="/users/" + review.user)
+                h6.card-subtitle.mb-2.text-muted.userHover #{review.user}
+            .col
+              h5.outOfTen(align='right') #{review.score} / 10
+          .row
+            p.card-text #{review.review}
+else
+  p This movie has no reviews yet. Be the first to leave a review!
+
+// Similar movies category
+h2#more More movies like: #{movie.Title} (#{movie.Year})
+.row
+  each movie in sug
+    .col
+      a(href="/movies/"+ movie.id)
+        img#sug1.movie(src=movie.Poster)

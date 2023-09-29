@@ -1,0 +1,14 @@
+doctype html
+
+include ../partials/head.pug
+
+// Navigation Bar
+
+include ../partials/header.pug
+.row
+h2 People that #{user.username} follows
+ul
+each person in people
+    li
+        a(href="/people/" + person.name) #{person.name}
+    

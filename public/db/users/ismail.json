@@ -1,0 +1,19 @@
+{
+    "id": 1,
+    "username": "Ismail",
+    "password": "Ismail",
+    "reviews": [
+        1,
+        4,
+        7
+    ],
+    "following": [
+        0
+    ],
+    "followers": [
+        0
+    ],
+    "bio": "Im Ismail and I changed my bio",
+    "contributor": true,
+    "picture" : "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX4614063.jpg"
+}

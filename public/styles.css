@@ -1,0 +1,135 @@
+  p, button {
+    font-family: verdana;
+    font-size: 12pt;
+    margin-top: 20px;
+  }
+
+  h2 {
+    margin: 20px;
+  }
+
+  button:hover {
+    background-color: hsl(197, 98%, 68%);
+    color: white;
+  }
+
+  input[type=text] {
+    width: 75%;
+    border-color: black;
+    border-radius: 1px;
+
+  }
+
+  .navbar-custom { 
+    background-color: coral;
+  }
+  
+  .tab-content {
+    border: 2px solid #000000;
+    padding: 15px;
+    margin: 0px;
+  }
+  
+  .tab-content .tab-pane {
+    color: #000000;
+    min-height: 200px;
+    height: auto;
+  }
+
+  body {
+    background-color: white;
+    height: 100%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  .search {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .longSearch {
+    width: 100%;
+  }
+
+  .searchMovie {
+    height: 250px;
+    width: 150px;
+  }
+
+  .movie {
+    height: 400px;
+    width: 250px;
+    margin: 30px;
+  }
+
+  .besideMovie {
+    padding-top: 25px;
+  }
+
+  .revIcon {
+    height: 50px;
+    width: 50px;
+  }
+
+  .tomato {
+    height: 75px;
+    width: 75px;
+  }
+
+  .review {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .userHover:hover {
+    opacity: 50%;
+  }
+
+ .profile {
+   border-radius: 50%;
+   height: 200px;
+   width: 200px;
+   margin-top: 20px;
+ }
+
+ .formBorder {
+   border-color: black;
+   border-style: solid;
+   border-width: 5px;
+ }
+
+ .formTitle {
+   margin-top: 15px;
+   margin-bottom: 15px;
+ }
+
+ .editText {
+   height: 100%;
+   width: 100%;
+ }
+
+ .searchBtn {
+  border-style: solid;
+  border-width: 2px;
+   border-color: black;
+ }
+
+ .summary {
+  width: 75%
+ }
+
+ .reviewBody {
+   margin-top: 50px;
+   margin-bottom: 150px;
+  width: 75%;
+  height: 50%;
+ }
+
+ .smallScore {
+  width: 15%;
+ }
+
+ .smallPerson {
+   width: 10%
+ }

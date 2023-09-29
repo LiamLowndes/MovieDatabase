@@ -1,0 +1,7 @@
+{
+    "id": 1,
+    "name": "Tim Allen",
+    "movies": [0],
+    "jobs":["Actor"],
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Tim_Allen_2012.jpg"
+}

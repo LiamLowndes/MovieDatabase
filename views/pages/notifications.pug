@@ -1,0 +1,18 @@
+doctype html
+
+include ../partials/head.pug
+
+// Navigation Bar
+
+include ../partials/header.pug
+
+.row
+h2 Notifications:
+
+if session.nonZero
+    ul
+    each notif in session.user.notifications
+        li Your friend #{notif[1]} just posted a reveiw on the movie #{notif[3]}.
+            a(href="../movies/"+notif[2])  Click here to check it out!
+else
+    p It doen't seem like you have any notifications at the moment!

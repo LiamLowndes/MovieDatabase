@@ -1,0 +1,68 @@
+doctype html
+
+include ../partials/head.pug
+
+// Navigation Bar
+
+include ../partials/header.pug
+
+script(src='../js/search.js')
+
+.search.input-group
+  .col-sm-11
+    if m
+      input#title.longSearch(placeholder='Title')
+      br
+      input#genre.longSearch(placeholder='Genre')
+      br
+      input#year.longSearch(placeholder='Year')
+      br
+      input#minRating.longSearch(placeholder='Min rating')
+      br
+      input#limit.longSearch(placeholder='Amount of items on page')
+      br
+      button.btn.btn-primary(onclick='search()' style='margin-top: 0px;' type='button') Search
+    else
+      input#name.longSearch(placeholder='Name')
+      input#limit.longSearch(placeholder='Amount of items on page')
+      button.btn.btn-primary(onclick='search()' style='margin-top: 0px;' type='button') Search
+.row
+  .col
+    h2 Search:
+    #res
+
+#searchResults.searchResults
+
+.row
+  if m
+    each movie in movies
+      a(href="movies/" + movie.id)
+        img(src=movie.Poster)
+  else if p
+    each person in people
+      .card-group
+        .card
+          a(href="people/" + person.name)
+            img.card-img-top(src=person.picture class='movie')
+          .card-body
+            a(href='people/' + person.name)
+              h5.card-title #{person.name}
+  else
+    each user in users
+      .card-group
+        .card
+          a(href='/users/' + user.username)
+            img.card-img-top(src=user.picture class='movie')
+          .card-body
+            a(href='/users/' + user.username)
+              h5.card-title #{user.username}
+
+if page > 1
+  if !lastPage
+    a(href=prevLink) Previous Page
+    a(href=nextLink) Next Page
+  else
+    a(href=prevLink) Previous Page
+else
+  if !lastPage
+    a(href=nextLink) Next Page

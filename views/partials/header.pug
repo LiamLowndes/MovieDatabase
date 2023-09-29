@@ -1,0 +1,29 @@
+script(src='../js/header.js')
+
+nav.navbar.navbar-custom.navbar-expand-md.navbar-light.sticky-top.container-fluid
+
+	a.navbar-brand(href='/')
+		img(src='../img/logo-small-plain(2).png')
+
+	#navbarResponsive.collapse.navbar-collapse
+
+	if session.loggedin
+		ul.navbar-nav.ml-auto
+			li.nav-item.active
+				a.nav-link(href='/') Home
+			li.nav-item
+				a.nav-link(href='/people') People
+			li.nav-item
+				a.nav-link(href='/users') Users
+			li.nav-item
+				a.nav-link(href='/movies') Movies
+			li.nav-item
+				a.nav-link(href='/notifications') Notifications
+			if session.user.contributor
+				li.nav-item
+					a.nav-link(href='/movieSubmit') Submit Movie
+			li.nav-item.active
+				a.nav-link(href='/users/'+session.user.username)
+					strong #{session.user.username}
+			li
+				button(onclick='logout()') Logout

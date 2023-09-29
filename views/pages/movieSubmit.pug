@@ -1,0 +1,77 @@
+doctype html
+
+include ../partials/head.pug
+
+// Navigation Bar
+
+include ../partials/header.pug
+
+script(src='../js/movieSubmit.js')
+
+.row
+  .col
+    h2 Submit a Movie:
+.formBorder
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='movieName') Name of Movie:
+        .col-sm-10
+          input#movieName.form-control(placeholder='Enter name of movie' name='movieName' value="Tom Hanks Movie")
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='year') Release year:re
+        .col-sm-10
+          input#year.form-control(placeholder='Enter release year' name='year' value="3005")
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='genre') Genre:
+        .col-sm-10
+          input#genre.form-control(placeholder='Enter genre year' name='genre' value="comedy, action, thriller")
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='summary') Short description of movie:
+        .col-sm-10
+          input#summary.form-control(placeholder='Enter a short summary' name='summary' value="This is a fake movie but don't you wish it was real")
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='poster') Link to movie poster:
+        .col-sm-10
+          input#poster.form-control(placeholder="Enter a link to the movie's poster" name='poster' value="")
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='director') Director (if more than one seperate by comma):
+        .col-sm-10
+          input#director.form-control(placeholder="Enter the director" name='director' value="Tom Hanks")
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='imdbScore') IMDb Score (as one digit. ex. 5, which would mean the movie got a 5/10):
+        .col-sm-10
+          input#imdbScore.form-control(placeholder="Enter the imdb Score" name='imdbScore' value="10")
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='actors') Actors in this movie (seperate by comma) :
+        .col-sm-10
+          input#actors.form-control(placeholder="Enter the actors" name='actors' value="Tom Hanks")
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='writers') Writers for this movie (seperate by comma) :
+        .col-sm-10
+          input#writers.form-control(placeholder="Enter the writers" name='writers' value="Tom Hanks")
+  .row
+    .col
+      .form-group
+        h5.col.formTitle(for='awards') Awards for this movie (seperate by comma) :
+        .col-sm-10
+          input#awards.form-control(placeholder="Enter the awards" name='awards' value="1 oscar")
+  .row
+    .col
+      button(onclick='submit()' style='margin: 15px;') Submit

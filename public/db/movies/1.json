@@ -1,0 +1,42 @@
+{
+    "id": 1,
+    "reviews": [3, 4, 5],
+    "Title": "Jumanji",
+    "Year": "1995",
+    "Rated": "PG",
+    "Released": "15 Dec 1995",
+    "Runtime": "104 min",
+    "Genre": "Adventure, Comedy, Family, Fantasy",
+    "Director": "Joe Johnston",
+    "Writer": "Jonathan Hensleigh (screenplay by), Greg Taylor (screenplay by), Jim Strain (screenplay by), Greg Taylor (screen story by), Jim Strain (screen story by), Chris Van Allsburg (screen story by), Chris Van Allsburg (based on the book by)",
+    "Actors": "Robin Williams, Jonathan Hyde, Kirsten Dunst, Bradley Pierce",
+    "Plot": "When two kids find and play a magical board game, they release a man trapped in it for decades - and a host of dangers that can only be stopped by finishing the game.",
+    "Language": "English, French",
+    "Country": "USA",
+    "Awards": "4 wins & 11 nominations.",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZTk2ZmUwYmEtNTcwZS00YmMyLWFkYjMtNTRmZDA3YWExMjc2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    "Ratings": [
+        {
+            "Source": "Internet Movie Database",
+            "Value": "7.0/10"
+        },
+        {
+            "Source": "Rotten Tomatoes",
+            "Value": "54%"
+        },
+        {
+            "Source": "Metacritic",
+            "Value": "39/100"
+        }
+    ],
+    "Metascore": "39",
+    "imdbRating": "7.0",
+    "imdbVotes": "297,463",
+    "imdbID": "tt0113497",
+    "Type": "movie",
+    "DVD": "25 Jan 2000",
+    "BoxOffice": "N/A",
+    "Production": "Sony Pictures Home Entertainment",
+    "Website": "N/A",
+    "Response": "True"
+}

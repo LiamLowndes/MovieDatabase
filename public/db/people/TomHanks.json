@@ -1,0 +1,7 @@
+{
+    "id": 0,
+    "name": "Tom Hanks",
+    "movies": [0],
+    "jobs":["Actor"],
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Tom_Hanks_TIFF_2019.jpg"
+}
